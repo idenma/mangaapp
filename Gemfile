@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+gem "jquery-rails" #おなじみjQuery
 gem 'turn-rails', '~> 0.1.0' #雑誌のように見せるJSプラグイン
 
 gem 'rspec', '~> 3.9'
