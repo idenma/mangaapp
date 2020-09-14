@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-root 'application#hello'
+ root 'manga#index'
+ resources:manga
+
 end

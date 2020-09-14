@@ -1,0 +1,13 @@
+<%= form_with(model: manga, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :subject %>
+    <%= form.text_field :subject %>
+    <%= form.label :picture %>
+    <%= form.file_field :picture %>
+    <%= form.hidden_field :picture_cache # 後述 %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
