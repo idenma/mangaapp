@@ -1,7 +1,7 @@
 class MangaController < ApplicationController
 
   def index
-  #  @mangas = Manga.all
+   @mangas = Manga.all
   end
 
   def new
@@ -9,9 +9,13 @@ class MangaController < ApplicationController
   end
 
   def create
+    @manga = Manga.new(manga_params)
+    @manga.save
+    redirect_to '/manga#show'
   end
 
   def show
+    @manga = Manga.find_by(params[:id])
   end
 
   def edit
@@ -22,5 +26,12 @@ class MangaController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def manga_params
+      params.require(:manga).permit(:subject, :picture)
+  end
+
 
 end
